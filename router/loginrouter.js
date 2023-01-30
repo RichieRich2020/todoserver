@@ -5,7 +5,11 @@ const brcypt = require('bcryptjs');
 const loginrouter = express.Router();
 
 loginrouter.get('/user', async (req, res) => {
-  return res.send('loginUser');
+  try {
+    return res.send('loginUser');
+  } catch (err) {
+    console.log(err);
+  }
 });
 loginrouter.post('/user', async (req, res) => {
   try {
